@@ -1,0 +1,52 @@
+{
+  "ESPRUINOBOARD" : {
+    "json" : "ESPRUINOBOARD.json",
+    "thumb" : "http://www.espruino.com/img/ESPRUINOBOARD_thumb.jpg",
+    "image" : "http://www.espruino.com/img/ESPRUINOBOARD.jpg",
+  },
+  "ESPRUINOBOARD_R1_0" : {
+    "json" : "ESPRUINOBOARD_R1_0.json",
+    "thumb" : "http://www.espruino.com/img/ESPRUINOBOARD_R1_0_thumb.jpg",
+    "image" : "http://www.espruino.com/img/ESPRUINOBOARD_R1_0.jpg",
+  },
+  "ESPRUINOBOARD_R1_1" : {
+    "json" : "ESPRUINOBOARD_R1_1.json",
+    "thumb" : "http://www.espruino.com/img/ESPRUINOBOARD_R1_1_thumb.jpg",
+    "image" : "http://www.espruino.com/img/ESPRUINOBOARD_R1_1.jpg",
+  },
+  "STM32VLDISCOVERY" : {
+    "json" : "STM32VLDISCOVERY.json",
+    "thumb" : "http://www.espruino.com/img/STM32VLDISCOVERY_thumb.jpg",
+    "image" : "http://www.espruino.com/img/STM32VLDISCOVERY.jpg",
+  },
+  "STM32F3DISCOVERY" : {
+    "json" : "STM32F3DISCOVERY.json",
+    "thumb" : "http://www.espruino.com/img/STM32F3DISCOVERY_thumb.jpg",
+    "image" : "http://www.espruino.com/img/STM32F3DISCOVERY.jpg",
+  },
+  "STM32F4DISCOVERY" : {
+    "json" : "STM32F4DISCOVERY.json",
+    "thumb" : "http://www.espruino.com/img/STM32F4DISCOVERY_thumb.jpg",
+    "image" : "http://www.espruino.com/img/STM32F4DISCOVERY.jpg",
+  },
+  "OLIMEXINO_STM32" : {
+    "json" : "OLIMEXINO_STM32.json",
+    "thumb" : "http://www.espruino.com/img/OLIMEXINO_STM32_thumb.jpg",
+    "image" : "http://www.espruino.com/img/OLIMEXINO_STM32.jpg",
+  },
+  "HYSTM32_24" : {
+    "json" : "HYSTM32_24.json",
+    "thumb" : "http://www.espruino.com/img/HYSTM32_24_thumb.jpg",
+    "image" : "http://www.espruino.com/img/HYSTM32_24.jpg",
+  },
+  "HYSTM32_28" : {
+    "json" : "HYSTM32_28.json",
+    "thumb" : "http://www.espruino.com/img/HYSTM32_28_thumb.jpg",
+    "image" : "http://www.espruino.com/img/HYSTM32_28.jpg",
+  },
+  "HYSTM32_32" : {
+    "json" : "HYSTM32_32.json",
+    "thumb" : "http://www.espruino.com/img/HYSTM32_32_thumb.jpg",
+    "image" : "http://www.espruino.com/img/HYSTM32_32.jpg",
+  },
+}

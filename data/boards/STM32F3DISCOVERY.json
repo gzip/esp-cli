@@ -1,0 +1,3524 @@
+{
+ "info": {
+  "image_url": "http://www.espruino.com/img/STM32F3DISCOVERY.jpg", 
+  "name": "STM32 F3 Discovery", 
+  "binary_version": "1v44", 
+  "variables": 1720, 
+  "binary_name": "espruino_%v_stm32f3discovery.bin", 
+  "link": [
+   "http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/PF254044"
+  ], 
+  "thumb_url": "http://www.espruino.com/img/STM32F3DISCOVERY_thumb.jpg", 
+  "binary_url": "http://www.espruino.com/binaries/espruino_1v44_stm32f3discovery.bin"
+ }, 
+ "layout": {
+  "right": [
+   "5V", 
+   "F10", 
+   "F1", 
+   "C15", 
+   "C13", 
+   "E5", 
+   "E3", 
+   "E1", 
+   "B9", 
+   "VDD", 
+   "B7", 
+   "B5", 
+   "B3", 
+   "D6", 
+   "D4", 
+   "D2", 
+   "D0", 
+   "C11", 
+   "A15", 
+   "A13", 
+   "A11", 
+   "A9", 
+   "C9", 
+   "NC", 
+   "GND"
+  ], 
+  "right2": [
+   "5V", 
+   "F9", 
+   "D0", 
+   "C14", 
+   "E6", 
+   "E4", 
+   "E2", 
+   "E0", 
+   "B8", 
+   "BOOT0", 
+   "B6", 
+   "B4", 
+   "D7", 
+   "D5", 
+   "D3", 
+   "D1", 
+   "C12", 
+   "C10", 
+   "A14", 
+   "F6", 
+   "A12", 
+   "A10", 
+   "A8", 
+   "C8", 
+   "GND"
+  ], 
+  "left2": [
+   "3V", 
+   "NRST", 
+   "C0", 
+   "C2", 
+   "F2", 
+   "A0", 
+   "A2", 
+   "A4", 
+   "A6", 
+   "C4", 
+   "B0", 
+   "B2", 
+   "E8", 
+   "E10", 
+   "E12", 
+   "E14", 
+   "B10", 
+   "B12", 
+   "B14", 
+   "D8", 
+   "D10", 
+   "D12", 
+   "D14", 
+   "C7", 
+   "GND"
+  ], 
+  "left": [
+   "3V", 
+   "GND", 
+   "C1", 
+   "C3", 
+   "A1", 
+   "A3", 
+   "F4", 
+   "A5", 
+   "A7", 
+   "C5", 
+   "B1", 
+   "E7", 
+   "E9", 
+   "E11", 
+   "E13", 
+   "E15", 
+   "B11", 
+   "B13", 
+   "B15", 
+   "D9", 
+   "D11", 
+   "D13", 
+   "D15", 
+   "C6", 
+   "GND"
+  ]
+ }, 
+ "chip": {
+  "family": "STM32F3", 
+  "dac": 2, 
+  "ram": 40, 
+  "spi": 2, 
+  "part": "STM32F303VCT6", 
+  "speed": 72, 
+  "usart": 3, 
+  "package": "LQFP100", 
+  "flash": 256, 
+  "adc": 4, 
+  "i2c": 2
+ }, 
+ "devices": {
+  "LED1": {
+   "pin": "E9"
+  }, 
+  "LED3": {
+   "pin": "E10"
+  }, 
+  "LED2": {
+   "pin": "E8"
+  }, 
+  "LED5": {
+   "pin": "E11"
+  }, 
+  "LED4": {
+   "pin": "E15"
+  }, 
+  "LED7": {
+   "pin": "E12"
+  }, 
+  "LED6": {
+   "pin": "E14"
+  }, 
+  "LED8": {
+   "pin": "E13"
+  }, 
+  "MIC": {
+   "device": "MP45DT02", 
+   "pin_dout": "B10", 
+   "pin_clk": "C3"
+  }, 
+  "MEMS": {
+   "pin_sda": "B7", 
+   "pin_int1": "E4", 
+   "pin_int2": "E5", 
+   "pin_scl": "B6", 
+   "device": "LSM303DLHC)", 
+   "pin_drdy": "E2"
+  }, 
+  "GYRO": {
+   "pin_int1": "E0", 
+   "pin_int2": "E1", 
+   "pin_cs": "E3", 
+   "pin_mosi": "A7", 
+   "pin_sck": "A5", 
+   "device": "L3GD20", 
+   "pin_miso": "A6"
+  }, 
+  "OSC": {
+   "pin_1": "F0", 
+   "pin_2": "F1"
+  }, 
+  "AUDIO": {
+   "pin_lrck": "A4", 
+   "pin_sda": "B9", 
+   "pin_mclk": "C7", 
+   "pin_scl": "B6", 
+   "device": "CS43L22", 
+   "pin_sdin": "C12", 
+   "pin_nrst": "D4", 
+   "pin_sclk": "C10"
+  }, 
+  "BTN1": {
+   "pin": "A0"
+  }, 
+  "OSC_RTC": {
+   "pin_1": "C14", 
+   "pin_2": "C15"
+  }, 
+  "USB": {
+   "pin_bp": "A12", 
+   "pin_id": "A10", 
+   "pin_vbus": "A9", 
+   "pin_otg_pwr": "C0", 
+   "pin_dm": "A11"
+  }
+ }, 
+ "peripherals": {
+  "SPI2": {
+   "MISO": [
+    "B14"
+   ], 
+   "MOSI": [
+    "B15"
+   ], 
+   "SCK": [
+    "B13", 
+    "F9", 
+    "F10"
+   ]
+  }, 
+  "SPI3": {
+   "MISO": [
+    "B4", 
+    "C11"
+   ], 
+   "MOSI": [
+    "B5", 
+    "C12"
+   ], 
+   "SCK": [
+    "B3", 
+    "C10"
+   ]
+  }, 
+  "SPI1": {
+   "MISO": [
+    "A6", 
+    "B4"
+   ], 
+   "MOSI": [
+    "A7", 
+    "B5"
+   ], 
+   "SCK": [
+    "A5", 
+    "B3"
+   ]
+  }, 
+  "DAC": {
+   "": [
+    "A4", 
+    "A5"
+   ]
+  }, 
+  "USART4": {
+   "RX": [
+    "C11"
+   ], 
+   "TX": [
+    "C10"
+   ]
+  }, 
+  "I2C1": {
+   "SCL": [
+    "A15", 
+    "B6", 
+    "B8"
+   ], 
+   "SDA": [
+    "A14", 
+    "B7", 
+    "B9"
+   ]
+  }, 
+  "ADC": {
+   "": [
+    "A0", 
+    "A1", 
+    "A2", 
+    "A3", 
+    "A4", 
+    "A5", 
+    "A6", 
+    "A7", 
+    "B0", 
+    "B1", 
+    "B2", 
+    "B13", 
+    "C0", 
+    "C1", 
+    "C2", 
+    "C3", 
+    "C4", 
+    "C5", 
+    "E7", 
+    "E9", 
+    "E10", 
+    "E11", 
+    "E12", 
+    "E13", 
+    "F2", 
+    "F4"
+   ]
+  }, 
+  "USART1": {
+   "RX": [
+    "A10", 
+    "B7", 
+    "C5", 
+    "E1"
+   ], 
+   "TX": [
+    "A9", 
+    "B6", 
+    "C4", 
+    "E0"
+   ]
+  }, 
+  "DEVICE": {
+   "": [
+    "A0", 
+    "A4", 
+    "A5", 
+    "A6", 
+    "A7", 
+    "A9", 
+    "A10", 
+    "A11", 
+    "A12", 
+    "B6", 
+    "B7", 
+    "B9", 
+    "B10", 
+    "C0", 
+    "C3", 
+    "C7", 
+    "C10", 
+    "C12", 
+    "C14", 
+    "C15", 
+    "D4", 
+    "E0", 
+    "E1", 
+    "E2", 
+    "E3", 
+    "E4", 
+    "E5", 
+    "E8", 
+    "E9", 
+    "E10", 
+    "E11", 
+    "E14", 
+    "E15", 
+    "F0", 
+    "F1"
+   ]
+  }, 
+  "USART5": {
+   "RX": [
+    "D2"
+   ], 
+   "TX": [
+    "C12"
+   ]
+  }, 
+  "PWM": {
+   "": [
+    "A1", 
+    "A1", 
+    "A2", 
+    "A2", 
+    "A3", 
+    "A3", 
+    "A4", 
+    "A6", 
+    "A6", 
+    "A7", 
+    "A7", 
+    "A7", 
+    "A7", 
+    "A8", 
+    "A9", 
+    "A9", 
+    "A10", 
+    "A10", 
+    "A11", 
+    "A11", 
+    "A11", 
+    "A12", 
+    "A12", 
+    "A12", 
+    "A13", 
+    "A13", 
+    "A14", 
+    "A15", 
+    "B0", 
+    "B0", 
+    "B0", 
+    "B1", 
+    "B1", 
+    "B1", 
+    "B3", 
+    "B3", 
+    "B4", 
+    "B4", 
+    "B4", 
+    "B5", 
+    "B5", 
+    "B5", 
+    "B6", 
+    "B6", 
+    "B6", 
+    "B7", 
+    "B7", 
+    "B7", 
+    "B8", 
+    "B8", 
+    "B8", 
+    "B9", 
+    "B9", 
+    "B9", 
+    "B10", 
+    "B11", 
+    "B13", 
+    "B14", 
+    "B14", 
+    "B15", 
+    "B15", 
+    "B15", 
+    "C6", 
+    "C6", 
+    "C7", 
+    "C7", 
+    "C8", 
+    "C8", 
+    "C9", 
+    "C9", 
+    "C10", 
+    "C11", 
+    "C12", 
+    "C13", 
+    "D1", 
+    "D4", 
+    "D6", 
+    "D7", 
+    "D12", 
+    "D13", 
+    "D14", 
+    "D15", 
+    "E0", 
+    "E1", 
+    "E2", 
+    "E3", 
+    "E4", 
+    "E5", 
+    "E8", 
+    "E9", 
+    "E10", 
+    "E11", 
+    "E12", 
+    "E13", 
+    "E14", 
+    "F0", 
+    "F6", 
+    "F9", 
+    "F10"
+   ]
+  }, 
+  "USART3": {
+   "RX": [
+    "B11", 
+    "C11", 
+    "D9", 
+    "E15"
+   ], 
+   "TX": [
+    "B10", 
+    "C10", 
+    "D8"
+   ]
+  }, 
+  "USART2": {
+   "RX": [
+    "A3", 
+    "A15", 
+    "B4", 
+    "D6"
+   ], 
+   "TX": [
+    "A2", 
+    "A14", 
+    "B3", 
+    "D5"
+   ]
+  }, 
+  "I2C2": {
+   "SCL": [
+    "A9", 
+    "F1", 
+    "F6"
+   ], 
+   "SDA": [
+    "A10", 
+    "F0"
+   ]
+  }, 
+  "CAN": {
+   "": [
+    "A11", 
+    "A12", 
+    "B8", 
+    "B9", 
+    "D0", 
+    "D1"
+   ]
+  }
+ }, 
+ "pins": [
+  {
+   "functions": {
+    "": 14, 
+    "ADC1_IN1": 1, 
+    "COMP1_OUT": 8, 
+    "TSC_G1_IO1": 3, 
+    "EVENT OUT": 15, 
+    "BTN1": "pin", 
+    "TIM8_BKIN": 9, 
+    "RTC_TAMP2": 1, 
+    "WKUP1": 1, 
+    "TIM8_ETR": 10, 
+    "COMP1_INM": 1, 
+    "USART2_CTS": 7, 
+    "TIM2_CH1_ETR": 1, 
+    "COMP7_INP": 1
+   }, 
+   "name": "A0", 
+   "sortingname": "A00", 
+   "simplefunctions": {
+    "DEVICE": [
+     "BTN1"
+    ], 
+    "ADC": [
+     "ADC1_IN1"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "USART2_CTS/TIM2_CH1_ETR/TIM8_BKIN/TIM8_ETR/TSC_G1_IO1/COMP1_OUT", 
+    "Name": "PA0", 
+    "LQFP64": "14", 
+    "LQFP100": "23", 
+    "Additional\n": "ADC1_IN1/COMP1_INM/RTC_TAMP2/WKUP1/COMP7_INP", 
+    "LQFP48": "10", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "OPAMP1_VINP": 1, 
+    "COMP1_INP": 1, 
+    "ADC1_IN2": 1, 
+    "TIM2_CH2": 1, 
+    "USART2_RTS": 7, 
+    "EVENT OUT": 15, 
+    "TSC_G1_IO2": 3, 
+    "TIM15_CH1N": 9, 
+    "OPAMP3_VINP": 1
+   }, 
+   "name": "A1", 
+   "sortingname": "A01", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM15_CH1N", 
+     "TIM2_CH2"
+    ], 
+    "ADC": [
+     "ADC1_IN2"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "USART2_RTS/TIM2_CH2/TSC_G1_IO2/TIM15_CH1N", 
+    "Name": "PA1", 
+    "LQFP64": "15", 
+    "LQFP100": "24", 
+    "Additional\n": "ADC1_IN2/COMP1_INP/OPAMP1_VINP/OPAMP3_VINP", 
+    "LQFP48": "11", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "ADC1_IN3": 1, 
+    "TIM2_CH3": 1, 
+    "USART2_TX": 7, 
+    "EVENT OUT": 15, 
+    "TIM15_CH1": 9, 
+    "COMP2_OUT": 8, 
+    "TSC_G1_IO3": 3, 
+    "COMP2_INM": 1, 
+    "AOP1_OUT": 1
+   }, 
+   "name": "A2", 
+   "sortingname": "A02", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM15_CH1", 
+     "TIM2_CH3"
+    ], 
+    "ADC": [
+     "ADC1_IN3"
+    ], 
+    "USART": [
+     "USART2_TX"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "USART2_TX/TIM2_CH3/TIM15_CH1/TSC_G1_IO3/COMP2_OUT", 
+    "Name": "PA2", 
+    "LQFP64": "16", 
+    "LQFP100": "25", 
+    "Additional\n": "ADC1_IN3/COMP2_INM/AOP1_OUT", 
+    "LQFP48": "12", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 32, 
+    "ADC1_IN4": 1, 
+    "OPAMP1_VINM": 1, 
+    "COMP2_INP": 1, 
+    "TIM15_CH2": 9, 
+    "TSC_G1_IO4": 3, 
+    "EVENT OUT": 15, 
+    "TIM2_CH4": 1, 
+    "USART2_RX": 7, 
+    "OPAMP1_VINP": 1, 
+    "SPI3_": 23
+   }, 
+   "name": "A3", 
+   "sortingname": "A03", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM15_CH2", 
+     "TIM2_CH4"
+    ], 
+    "ADC": [
+     "ADC1_IN4"
+    ], 
+    "USART": [
+     "USART2_RX"
+    ]
+   }, 
+   "num": "3", 
+   "csv": {
+    "Alternate": "USART2_RX/TIM2_CH4/TIM15_CH2/TSC_G1_IO4", 
+    "Name": "PA3", 
+    "LQFP64": "17", 
+    "LQFP100": "26", 
+    "Additional\n": "ADC1_IN4/OPAMP1_VINP/COMP2_INP/OPAMP1_VINM", 
+    "LQFP48": "13", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "SPI3_NSS": 0, 
+    "": 32, 
+    "NSS/ I2S3_": 6, 
+    "COMP5_INM4": 1, 
+    "OPAMP4_VINP": 1, 
+    "TIM3_CH2": 2, 
+    "COMP3_INM4": 1, 
+    "COMP1_INM4": 1, 
+    "COMP4_INM4": 1, 
+    "EVENT OUT": 15, 
+    "COMP2_INM4": 1, 
+    "SPI1_NSS": 5, 
+    "I2S3_WS": 0, 
+    "DAC1_OUT1": 1, 
+    "AUDIO": "pin_lrck", 
+    "TSC_G2_IO1": 3, 
+    "USART2_CK": 7, 
+    "COMP7_INM4": 1, 
+    "COMP6_INM4": 1, 
+    "WS": 23, 
+    "ADC2_IN1": 1
+   }, 
+   "name": "A4", 
+   "sortingname": "A04", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "PWM": [
+     "TIM3_CH2"
+    ], 
+    "ADC": [
+     "ADC2_IN1"
+    ], 
+    "DAC": [
+     "DAC1_OUT1"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "SPI1_NSS/SPI3_NSS/I2S3_WS/USART2_CK/TSC_G2_IO1/TIM3_CH2", 
+    "Name": "PA4", 
+    "LQFP64": "20", 
+    "LQFP100": "29", 
+    "Additional\n": "ADC2_IN1/DAC1_OUT1/OPAMP4_VINP/COMP1_INM4/COMP2_INM4/COMP3_INM4/COMP4_INM4/COMP5_INM4/COMP6_INM4/COMP7_INM4", 
+    "LQFP48": "14", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "COMP6_INM5": 1, 
+    "": 14, 
+    "TSC_G2_IO2": 3, 
+    "COMP2_INM5": 1, 
+    "COMP3_INM5": 1, 
+    "GYRO": "pin_sck", 
+    "COMP1_INM5": 1, 
+    "EVENT OUT": 15, 
+    "SPI1_SCK": 5, 
+    "COMP5_INM5": 1, 
+    "COMP4_INM5": 1, 
+    "DAC1_OUT2": 1, 
+    "OPAMP3_VINP": 1, 
+    "OPAMP2_VINM": 1, 
+    "OPAMP1_VINP": 1, 
+    "ADC2_IN2": 1, 
+    "TIM2_CH1_ETR": 1, 
+    "COMP7_INM5": 1
+   }, 
+   "name": "A5", 
+   "sortingname": "A05", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "SPI": [
+     "SPI1_SCK"
+    ], 
+    "ADC": [
+     "ADC2_IN2"
+    ], 
+    "DAC": [
+     "DAC1_OUT2"
+    ]
+   }, 
+   "num": "5", 
+   "csv": {
+    "Alternate": "SPI1_SCK/TIM2_CH1_ETR/TSC_G2_IO2", 
+    "Name": "PA5", 
+    "LQFP64": "21", 
+    "LQFP100": "30", 
+    "Additional\n": "ADC2_IN2/DAC1_OUT2/OPAMP1_VINP/OPAMP2_VINM/OPAMP3_VINP/COMP1_INM5/COMP2_INM5/COMP3_INM5/COMP4_INM5/COMP5_INM5/COMP6_INM5/COMP7_INM5", 
+    "LQFP48": "15", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "ADC2_IN3": 1, 
+    "GYRO": "pin_miso", 
+    "TIM3_CH1": 2, 
+    "EVENT OUT": 15, 
+    "SPI1_MISO": 5, 
+    "TIM8_BKIN": 4, 
+    "AOP2_OUT": 1, 
+    "TIM16_CH1": 1, 
+    "TSC_G2_IO3": 3, 
+    "TIM1_BKIN": 6, 
+    "COMP1_OUT": 8
+   }, 
+   "name": "A6", 
+   "sortingname": "A06", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "SPI": [
+     "SPI1_MISO"
+    ], 
+    "PWM": [
+     "TIM16_CH1", 
+     "TIM3_CH1"
+    ], 
+    "ADC": [
+     "ADC2_IN3"
+    ]
+   }, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "SPI1_MISO/TIM3_CH1/TIM8_BKIN/TIM1_BKIN/TIM16_CH1/COMP1_OUT/TSC_G2_IO3", 
+    "Name": "PA6", 
+    "LQFP64": "22", 
+    "LQFP100": "31", 
+    "Additional\n": "ADC2_IN3/AOP2_OUT", 
+    "LQFP48": "16", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TIM1_CH1N": 6, 
+    "OPAMP2_VINP": 1, 
+    "TIM17_CH1": 1, 
+    "TIM3_CH2": 2, 
+    "EVENT OUT": 15, 
+    "COMP2_IN": 1, 
+    "TIM8_CH1N": 4, 
+    "SPI1_MOSI": 5, 
+    "COMP2_OUT": 8, 
+    "GYRO": "pin_mosi", 
+    "ADC2_IN4": 1, 
+    "OPAMP1_VINP": 1, 
+    "TSC_G2_IO4": 3
+   }, 
+   "name": "A7", 
+   "sortingname": "A07", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "SPI": [
+     "SPI1_MOSI"
+    ], 
+    "PWM": [
+     "TIM17_CH1", 
+     "TIM1_CH1N", 
+     "TIM3_CH2", 
+     "TIM8_CH1N"
+    ], 
+    "ADC": [
+     "ADC2_IN4"
+    ]
+   }, 
+   "num": "7", 
+   "csv": {
+    "Alternate": "SPI1_MOSI/TIM3_CH2/TIM17_CH1/TIM1_CH1N/TIM8_CH1N/TSC_G2_IO4/COMP2_OUT", 
+    "Name": "PA7", 
+    "LQFP64": "23", 
+    "LQFP100": "32", 
+    "Additional\n": "ADC2_IN4/COMP2_IN/OPAMP2_VINP/OPAMP1_VINP", 
+    "LQFP48": "17", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "TIM4_ETR": 10, 
+    "MCO": 0, 
+    "TIM1_CH1": 6, 
+    "": 14, 
+    "I2C2_SMBA": 4, 
+    "COMP3_OUT": 8, 
+    "EVENT OUT": 15, 
+    "USART1_CK": 7, 
+    "I2S2_MCK": 5
+   }, 
+   "name": "A8", 
+   "sortingname": "A08", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH1"
+    ]
+   }, 
+   "num": "8", 
+   "csv": {
+    "Alternate": "I2C2_SMBA/I2S2_MCK/USART1_CK/TIM1_CH1/TIM4_ETR/MCO/COMP3_OUT", 
+    "Name": "PA8", 
+    "LQFP64": "41", 
+    "LQFP100": "67", 
+    "Additional\n": "", 
+    "LQFP48": "29", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "USART1_TX": 7, 
+    "TIM15_BKIN": 9, 
+    "COMP5_OUT": 8, 
+    "TIM1_CH2": 6, 
+    "TIM2_CH3": 10, 
+    "I2C2_SCL": 4, 
+    "EVENT OUT": 15, 
+    "I2S3_MCK": 5, 
+    "TSC_G4_IO1": 3, 
+    "USB": "pin_vbus"
+   }, 
+   "name": "A9", 
+   "sortingname": "A09", 
+   "simplefunctions": {
+    "DEVICE": [
+     "USB"
+    ], 
+    "I2C": [
+     "I2C2_SCL"
+    ], 
+    "USART": [
+     "USART1_TX"
+    ], 
+    "PWM": [
+     "TIM1_CH2", 
+     "TIM2_CH3"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "I2C2_SCL/I2S3_MCK/USART1_TX/TIM1_CH2/TIM2_CH3/TIM15_BKIN/TSC_G4_IO1/COMP5_OUT", 
+    "Name": "PA9", 
+    "LQFP64": "42", 
+    "LQFP100": "68", 
+    "Additional\n": "", 
+    "LQFP48": "30", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "COMP6_OUT": 8, 
+    "I2C2_SDA": 4, 
+    "TIM1_CH3": 6, 
+    "EVENT OUT": 15, 
+    "TIM2_CH4": 10, 
+    "TIM17_BKIN": 1, 
+    "TIM8_BKIN": 11, 
+    "USART1_RX": 7, 
+    "TSC_G4_IO2": 3, 
+    "USB": "pin_id"
+   }, 
+   "name": "A10", 
+   "sortingname": "A10", 
+   "simplefunctions": {
+    "DEVICE": [
+     "USB"
+    ], 
+    "I2C": [
+     "I2C2_SDA"
+    ], 
+    "USART": [
+     "USART1_RX"
+    ], 
+    "PWM": [
+     "TIM1_CH3", 
+     "TIM2_CH4"
+    ]
+   }, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "I2C2_SDA/USART1_RX/TIM1_CH3/TIM2_CH4/TIM8_BKIN/TIM17_BKIN/TSC_G4_IO2/COMP6_OUT", 
+    "Name": "PA10", 
+    "LQFP64": "43", 
+    "LQFP100": "69", 
+    "Additional\n": "", 
+    "LQFP48": "31", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 13, 
+    "TIM1_CH4": 11, 
+    "TIM1_CH1N": 6, 
+    "USB": "pin_dm", 
+    "TIM4_CH1": 10, 
+    "USBDM": 14, 
+    "USART1_CTS": 7, 
+    "EVENT OUT": 15, 
+    "TIM1_BKIN2": 12, 
+    "CAN_RX": 9, 
+    "COMP1_OUT": 8
+   }, 
+   "name": "A11", 
+   "sortingname": "A11", 
+   "simplefunctions": {
+    "DEVICE": [
+     "USB"
+    ], 
+    "PWM": [
+     "TIM1_CH1N", 
+     "TIM1_CH4", 
+     "TIM4_CH1"
+    ], 
+    "CAN": [
+     "CAN_RX"
+    ]
+   }, 
+   "num": "11", 
+   "csv": {
+    "Alternate": "USART1_CTS/USBDM/CAN_RX/TIM1_CH1N/TIM1_CH4/TIM1_BKIN2/TIM4_CH1/COMP1_OUT", 
+    "Name": "PA11", 
+    "LQFP64": "44", 
+    "LQFP100": "70", 
+    "Additional\n": "", 
+    "LQFP48": "32", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 13, 
+    "USB": "pin_bp", 
+    "TIM4_CH2": 10, 
+    "USBDP": 14, 
+    "EVENT OUT": 15, 
+    "TIM1_ETR": 11, 
+    "TIM1_CH2N": 6, 
+    "CAN_TX": 9, 
+    "TIM16_CH1": 1, 
+    "USART1_RTS": 7, 
+    "COMP2_OUT": 8
+   }, 
+   "name": "A12", 
+   "sortingname": "A12", 
+   "simplefunctions": {
+    "DEVICE": [
+     "USB"
+    ], 
+    "PWM": [
+     "TIM16_CH1", 
+     "TIM1_CH2N", 
+     "TIM4_CH2"
+    ], 
+    "CAN": [
+     "CAN_TX"
+    ]
+   }, 
+   "num": "12", 
+   "csv": {
+    "Alternate": "USART1_RTS/USBDP/CAN_TX/TIM1_CH2N/TIM1_ETR/TIM4_CH2/TIM16_CH1/COMP2_OUT", 
+    "Name": "PA12", 
+    "LQFP64": "45", 
+    "LQFP100": "71", 
+    "Additional\n": "", 
+    "LQFP48": "33", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "IR_OUT": 5, 
+    "TIM4_CH3": 10, 
+    "EVENT OUT": 15, 
+    "TIM16_CH1N": 1, 
+    "USART3_CTS": 7, 
+    "TSC_G4_IO3": 3, 
+    "SWDAT-JTMS": 0
+   }, 
+   "name": "A13", 
+   "sortingname": "A13", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM16_CH1N", 
+     "TIM4_CH3"
+    ]
+   }, 
+   "num": "13", 
+   "csv": {
+    "Alternate": "USART3_CTS/TIM4_CH3/TIM16_CH1N/TSC_G4_IO3/IR_OUT/SWDAT-JTMS", 
+    "Name": "PA13", 
+    "LQFP64": "46", 
+    "LQFP100": "72", 
+    "Additional\n": "", 
+    "LQFP48": "34", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TSC_G4_IO4": 3, 
+    "SWCLK-JTCK": 0, 
+    "USART2_TX": 7, 
+    "EVENT OUT": 15, 
+    "TIM8_CH2": 5, 
+    "I2C1_SDA": 4, 
+    "TIM1_BKIN": 6
+   }, 
+   "name": "A14", 
+   "sortingname": "A14", 
+   "simplefunctions": {
+    "I2C": [
+     "I2C1_SDA"
+    ], 
+    "USART": [
+     "USART2_TX"
+    ], 
+    "PWM": [
+     "TIM8_CH2"
+    ]
+   }, 
+   "num": "14", 
+   "csv": {
+    "Alternate": "I2C1_SDA/USART2_TX/TIM8_CH2/TIM1_BKIN/TSC_G4_IO4/SWCLK-JTCK", 
+    "Name": "PA14", 
+    "LQFP64": "49", 
+    "LQFP100": "76", 
+    "Additional\n": "", 
+    "LQFP48": "37", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "SPI3_NSS": 0, 
+    "": 32, 
+    "JTDI": 0, 
+    "Port": 16, 
+    "TIM8_CH1": 2, 
+    "I2C1_SCL": 4, 
+    "EVENT OUT": 15, 
+    "SPI1_NSS": 5, 
+    "I2S3_WS": 0, 
+    "USART2_RX": 7, 
+    "TIM1_BKIN": 9, 
+    "TIM2_CH1_ETR": 1, 
+    "SPI3_NSS/ I2S3_WS": 6
+   }, 
+   "name": "A15", 
+   "sortingname": "A15", 
+   "simplefunctions": {
+    "I2C": [
+     "I2C1_SCL"
+    ], 
+    "USART": [
+     "USART2_RX"
+    ], 
+    "PWM": [
+     "TIM8_CH1"
+    ]
+   }, 
+   "num": "15", 
+   "csv": {
+    "Alternate": "I2C1_SCL/SPI1_NSS/SPI3_NSS/I2S3_WS/JTDI/USART2_RX/TIM1_BKIN/TIM2_CH1_ETR/TIM8_CH1", 
+    "Name": "PA15", 
+    "LQFP64": "50", 
+    "LQFP100": "77", 
+    "Additional\n": "", 
+    "LQFP48": "38", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "A"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "COMP4_INP": 1, 
+    "ADC3_IN12": 1, 
+    "OPAMP2_VINP": 1, 
+    "TIM3_CH3": 2, 
+    "TIM1_CH2N": 6, 
+    "EVENT OUT": 15, 
+    "OPAMP3_VINP": 1, 
+    "TIM8_CH2N": 4, 
+    "TSC_G3_IO2": 3
+   }, 
+   "name": "B0", 
+   "sortingname": "B00", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH2N", 
+     "TIM3_CH3", 
+     "TIM8_CH2N"
+    ], 
+    "ADC": [
+     "ADC3_IN12"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "TIM3_CH3/TIM1_CH2N/TIM8_CH2N/TSC_G3_IO2", 
+    "Name": "PB0", 
+    "LQFP64": "26", 
+    "LQFP100": "35", 
+    "Additional\n": "ADC3_IN12/COMP4_INP/OPAMP3_VINP/OPAMP2_VINP", 
+    "LQFP48": "18", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "ADC3_IN1": 1, 
+    "AOP3_OUT": 1, 
+    "TSC_G3_IO3": 3, 
+    "TIM1_CH3N": 6, 
+    "TIM3_CH4": 2, 
+    "TIM8_CH3N": 4, 
+    "EVENT OUT": 15, 
+    "COMP4_OUT": 8
+   }, 
+   "name": "B1", 
+   "sortingname": "B01", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH3N", 
+     "TIM3_CH4", 
+     "TIM8_CH3N"
+    ], 
+    "ADC": [
+     "ADC3_IN1"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "TIM3_CH4/TIM1_CH3N/TIM8_CH3N/COMP4_OUT/TSC_G3_IO3", 
+    "Name": "PB1", 
+    "LQFP64": "27", 
+    "LQFP100": "36", 
+    "Additional\n": "ADC3_IN1/AOP3_OUT", 
+    "LQFP48": "19", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "OPAMP3_VINM": 1, 
+    "": 14, 
+    "TSC_G3_IO4": 3, 
+    "EVENT OUT": 15, 
+    "COMP4_INM": 1, 
+    "ADC2_IN12": 1
+   }, 
+   "name": "B2", 
+   "sortingname": "B02", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC2_IN12"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "TSC_G3_IO4", 
+    "Name": "PB2", 
+    "LQFP64": "28", 
+    "LQFP100": "37", 
+    "Additional\n": "ADC2_IN12/COMP4_INM/OPAMP3_VINM", 
+    "LQFP48": "20", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "TIM4_ETR": 2, 
+    "JTDOTRACESWO": 0, 
+    "": 14, 
+    "I2S3_CK": 0, 
+    "TIM2_CH2": 1, 
+    "USART2_TX": 7, 
+    "EVENT OUT": 15, 
+    "SPI1_SCK": 5, 
+    "TIM8_CH1N": 4, 
+    "SPI3_SCK /I2S3_CK": 6, 
+    "TIM3_ETR": 10, 
+    "SPI3_SCK": 0, 
+    "JTDO-TRACE SWO": 0, 
+    "TSC_G5_IO1": 3
+   }, 
+   "name": "B3", 
+   "sortingname": "B03", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI1_SCK", 
+     "SPI3_SCK"
+    ], 
+    "PWM": [
+     "TIM2_CH2", 
+     "TIM8_CH1N"
+    ], 
+    "USART": [
+     "USART2_TX"
+    ]
+   }, 
+   "num": "3", 
+   "csv": {
+    "Alternate": "SPI3_SCK/I2S3_CK/SPI1_SCK/USART2_TX/TIM2_CH2/TIM3_ETR/TIM4_ETR/TIM8_CH1N/TSC_G5_IO1/JTDOTRACESWO", 
+    "Name": "PB3", 
+    "LQFP64": "55", 
+    "LQFP100": "89", 
+    "Additional\n": "", 
+    "LQFP48": "39", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TIM3_CH1": 2, 
+    "TSC_G5_IO2": 3, 
+    "EVENT OUT": 15, 
+    "SPI1_MISO": 5, 
+    "NJTRST": 0, 
+    "TIM8_CH2N": 4, 
+    "TIM16_CH1": 1, 
+    "USART2_RX": 7, 
+    "SPI3_MISO/ I2S3ext_SD": 6, 
+    "TIM17_BKIN": 10, 
+    "I2S3ext_SD": 0, 
+    "SPI3_MISO": 0
+   }, 
+   "name": "B4", 
+   "sortingname": "B04", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI1_MISO", 
+     "SPI3_MISO"
+    ], 
+    "PWM": [
+     "TIM16_CH1", 
+     "TIM3_CH1", 
+     "TIM8_CH2N"
+    ], 
+    "USART": [
+     "USART2_RX"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "SPI3_MISO/I2S3ext_SD/SPI1_MISO/USART2_RX/TIM3_CH1/TIM16_CH1/TIM17_BKIN/TIM8_CH2N/TSC_G5_IO2/NJTRST", 
+    "Name": "PB4", 
+    "LQFP64": "56", 
+    "LQFP100": "90", 
+    "Additional\n": "", 
+    "LQFP48": "40", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TIM17_CH1": 10, 
+    "TIM3_CH2": 2, 
+    "EVENT OUT": 15, 
+    "I2C1_SMBA": 4, 
+    "SPI3_MOSI": 0, 
+    "TIM8_CH3N": 3, 
+    "SPI1_MOSI": 5, 
+    "SPI3_MOSI/ I2S3_SD": 6, 
+    "I2S3_SD": 0, 
+    "USART2_CK": 7, 
+    "TIM16_BKIN": 1
+   }, 
+   "name": "B5", 
+   "sortingname": "B05", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI1_MOSI", 
+     "SPI3_MOSI"
+    ], 
+    "PWM": [
+     "TIM17_CH1", 
+     "TIM3_CH2", 
+     "TIM8_CH3N"
+    ]
+   }, 
+   "num": "5", 
+   "csv": {
+    "Alternate": "SPI3_MOSI/SPI1_MOSI/I2S3_SD/I2C1_SMBA/USART2_CK/TIM16_BKIN/TIM3_CH2/TIM8_CH3N/TIM17_CH1", 
+    "Name": "PB5", 
+    "LQFP64": "57", 
+    "LQFP100": "91", 
+    "Additional\n": "", 
+    "LQFP48": "41", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "USART1_TX": 7, 
+    "TIM4_CH1": 2, 
+    "TIM8_CH1": 5, 
+    "I2C1_SCL": 4, 
+    "TSC_G5_IO3": 3, 
+    "TIM8_BKIN2": 10, 
+    "TIM16_CH1N": 1, 
+    "EVENT OUT": 15, 
+    "TIM8_ETR": 6, 
+    "AUDIO": "pin_scl"
+   }, 
+   "name": "B6", 
+   "sortingname": "B06", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "I2C": [
+     "I2C1_SCL"
+    ], 
+    "USART": [
+     "USART1_TX"
+    ], 
+    "PWM": [
+     "TIM16_CH1N", 
+     "TIM4_CH1", 
+     "TIM8_CH1"
+    ]
+   }, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "I2C1_SCL/USART1_TX/TIM16_CH1N/TIM4_CH1/TIM8_CH1/TSC_G5_IO3/TIM8_ETR/TIM8_BKIN2", 
+    "Name": "PB6", 
+    "LQFP64": "58", 
+    "LQFP100": "92", 
+    "Additional\n": "", 
+    "LQFP48": "42", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TIM17_CH1N": 1, 
+    "TIM4_CH2": 2, 
+    "EVENT OUT": 15, 
+    "TIM3_CH4": 10, 
+    "TIM8_BKIN": 5, 
+    "I2C1_SDA": 4, 
+    "USART1_RX": 7, 
+    "MEMS": "pin_sda", 
+    "TSC_G5_IO4": 3
+   }, 
+   "name": "B7", 
+   "sortingname": "B07", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MEMS"
+    ], 
+    "I2C": [
+     "I2C1_SDA"
+    ], 
+    "USART": [
+     "USART1_RX"
+    ], 
+    "PWM": [
+     "TIM17_CH1N", 
+     "TIM3_CH4", 
+     "TIM4_CH2"
+    ]
+   }, 
+   "num": "7", 
+   "csv": {
+    "Alternate": "I2C1_SDA/USART1_RX/TIM3_CH4/TIM4_CH2/TIM17_CH1N/TIM8_BKIN/TSC_G5_IO4", 
+    "Name": "PB7", 
+    "LQFP64": "59", 
+    "LQFP100": "93", 
+    "Additional\n": "", 
+    "LQFP48": "43", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "TSC_SYNC": 3, 
+    "": 14, 
+    "COMP1_OUT": 8, 
+    "TIM4_CH3": 2, 
+    "EVENT OUT": 15, 
+    "TIM8_CH2": 10, 
+    "CAN_RX": 9, 
+    "I2C1_SCL": 4, 
+    "TIM16_CH1": 1, 
+    "TIM1_BKIN": 11
+   }, 
+   "name": "B8", 
+   "sortingname": "B08", 
+   "simplefunctions": {
+    "I2C": [
+     "I2C1_SCL"
+    ], 
+    "CAN": [
+     "CAN_RX"
+    ], 
+    "PWM": [
+     "TIM16_CH1", 
+     "TIM4_CH3", 
+     "TIM8_CH2"
+    ]
+   }, 
+   "num": "8", 
+   "csv": {
+    "Alternate": "I2C1_SCL/CAN_RX/TIM16_CH1/TIM4_CH3/TIM8_CH2/TIM1_BKIN/TSC_SYNC/COMP1_OUT", 
+    "Name": "PB8", 
+    "LQFP64": "61", 
+    "LQFP100": "95", 
+    "Additional\n": "", 
+    "LQFP48": "45", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "IR_OUT": 6, 
+    "TIM17_CH1": 1, 
+    "TIM4_CH4": 2, 
+    "EVENT OUT": 15, 
+    "TIM8_CH3": 10, 
+    "I2C1_SDA": 4, 
+    "COMP2_OUT": 8, 
+    "CAN_TX": 9, 
+    "AUDIO": "pin_sda"
+   }, 
+   "name": "B9", 
+   "sortingname": "B09", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "I2C": [
+     "I2C1_SDA"
+    ], 
+    "CAN": [
+     "CAN_TX"
+    ], 
+    "PWM": [
+     "TIM17_CH1", 
+     "TIM4_CH4", 
+     "TIM8_CH3"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "I2C1_SDA/CAN_TX/TIM17_CH1/TIM4_CH4/TIM8_CH3/IR_OUT/COMP2_OUT", 
+    "Name": "PB9", 
+    "LQFP64": "62", 
+    "LQFP100": "96", 
+    "Additional\n": "", 
+    "LQFP48": "46", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "TSC_SYNC": 3, 
+    "OPAMP3_VINM": 1, 
+    "USART3_TX": 7, 
+    "": 14, 
+    "TIM2_CH3": 1, 
+    "MIC": "pin_dout", 
+    "COMP5_INM": 1, 
+    "EVENT OUT": 15, 
+    "OPAMP4_VINM": 1
+   }, 
+   "name": "B10", 
+   "sortingname": "B10", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MIC"
+    ], 
+    "PWM": [
+     "TIM2_CH3"
+    ], 
+    "USART": [
+     "USART3_TX"
+    ]
+   }, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "USART3_TX/TIM2_CH3/TSC_SYNC", 
+    "Name": "PB10", 
+    "LQFP64": "29", 
+    "LQFP100": "47", 
+    "Additional\n": "COMP5_INM/OPAMP4_VINM/OPAMP3_VINM", 
+    "LQFP48": "21", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "COMP6_INP": 1, 
+    "OPAMP4_VINP": 1, 
+    "TSC_G6_IO1": 3, 
+    "EVENT OUT": 15, 
+    "TIM2_CH4": 1, 
+    "USART3_RX": 7
+   }, 
+   "name": "B11", 
+   "sortingname": "B11", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM2_CH4"
+    ], 
+    "USART": [
+     "USART3_RX"
+    ]
+   }, 
+   "num": "11", 
+   "csv": {
+    "Alternate": "USART3_RX/TIM2_CH4/TSC_G6_IO1", 
+    "Name": "PB11", 
+    "LQFP64": "30", 
+    "LQFP100": "48", 
+    "Additional\n": "COMP6_INP/OPAMP4_VINP", 
+    "LQFP48": "22", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "I2C2_SMBA": 4, 
+    "I2S2_WS": 0, 
+    "ADC4_IN3": 1, 
+    "AOP4_OUT": 1, 
+    "COMP3_INM": 1, 
+    "TSC_G6_IO2": 3, 
+    "USART3_CK": 7, 
+    "EVENT OUT": 15, 
+    "SPI2_NSS": 0, 
+    "SPI2_NSS/ I2S2_WS": 5, 
+    "TIM1_BKIN": 6
+   }, 
+   "name": "B12", 
+   "sortingname": "B12", 
+   "simplefunctions": {}, 
+   "num": "12", 
+   "csv": {
+    "Alternate": "SPI2_NSS/I2S2_WS/I2C2_SMBA/USART3_CK/TIM1_BKIN/TSC_G6_IO2", 
+    "Name": "PB12", 
+    "LQFP64": "33", 
+    "LQFP100": "51", 
+    "Additional\n": "ADC4_IN3/COMP3_INM/AOP4_OUT", 
+    "LQFP48": "25", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "TIM1_CH1N": 6, 
+    "ADC3_IN5": 1, 
+    "OPAMP4_VINP": 1, 
+    "I2S2_CK": 0, 
+    "SPI2_SCK/ I2S2_CK": 5, 
+    "TSC_G6_IO3": 3, 
+    "EVENT OUT": 15, 
+    "COMP5_INP": 1, 
+    "SPI2_SCK": 0, 
+    "USART3_CTS": 7, 
+    "OPAMP3_VINP": 1
+   }, 
+   "name": "B13", 
+   "sortingname": "B13", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI2_SCK"
+    ], 
+    "PWM": [
+     "TIM1_CH1N"
+    ], 
+    "ADC": [
+     "ADC3_IN5"
+    ]
+   }, 
+   "num": "13", 
+   "csv": {
+    "Alternate": "SPI2_SCK/I2S2_CK/USART3_CTS/TIM1_CH1N/TSC_G6_IO3", 
+    "Name": "PB13", 
+    "LQFP64": "34", 
+    "LQFP100": "52", 
+    "Additional\n": "ADC3_IN5/COMP5_INP/OPAMP4_VINP/OPAMP3_VINP", 
+    "LQFP48": "26", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "ADC4_IN4": 1, 
+    "I2S2ext_SD": 0, 
+    "SPI2_MISO": 0, 
+    "SPI2_MISO/ I2S2ext_SD": 5, 
+    "OPAMP2_VINP": 1, 
+    "TSC_G6_IO4": 3, 
+    "TIM1_CH2N": 6, 
+    "EVENT OUT": 15, 
+    "TIM15_CH1": 1, 
+    "COMP3_INP": 1, 
+    "USART3_RTS": 7, 
+    "": 14
+   }, 
+   "name": "B14", 
+   "sortingname": "B14", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI2_MISO"
+    ], 
+    "PWM": [
+     "TIM15_CH1", 
+     "TIM1_CH2N"
+    ]
+   }, 
+   "num": "14", 
+   "csv": {
+    "Alternate": "SPI2_MISO/I2S2ext_SD/USART3_RTS/TIM1_CH2N/TIM15_CH1/TSC_G6_IO4", 
+    "Name": "PB14", 
+    "LQFP64": "35", 
+    "LQFP100": "53", 
+    "Additional\n": "COMP3_INP/ADC4_IN4/OPAMP2_VINP", 
+    "LQFP48": "27", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 14, 
+    "ADC4_IN5": 1, 
+    "SPI2_MOSI/ I2S2_SD": 5, 
+    "RTC_REFIN": 1, 
+    "TIM1_CH3N": 4, 
+    "TIM15_CH2": 1, 
+    "TIM15_CH1N": 2, 
+    "I2S2_SD": 0, 
+    "EVENT OUT": 15, 
+    "SPI2_MOSI": 0, 
+    "COMP6_INM": 1
+   }, 
+   "name": "B15", 
+   "sortingname": "B15", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI2_MOSI"
+    ], 
+    "PWM": [
+     "TIM15_CH1N", 
+     "TIM15_CH2", 
+     "TIM1_CH3N"
+    ]
+   }, 
+   "num": "15", 
+   "csv": {
+    "Alternate": "SPI2_MOSI/I2S2_SD/TIM1_CH3N/TIM15_CH1N/TIM15_CH2", 
+    "Name": "PB15", 
+    "LQFP64": "36", 
+    "LQFP100": "54", 
+    "Additional\n": "ADC4_IN5/RTC_REFIN/COMP6_INM", 
+    "LQFP48": "28", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "B"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC12_IN6": 1, 
+    "EVENTOUT": 1, 
+    "COMP7_INM": 1, 
+    "USB": "pin_otg_pwr"
+   }, 
+   "name": "C0", 
+   "sortingname": "C00", 
+   "simplefunctions": {
+    "DEVICE": [
+     "USB"
+    ], 
+    "ADC": [
+     "ADC12_IN6"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "", 
+    "Name": "PC0", 
+    "LQFP64": "8", 
+    "LQFP100": "15", 
+    "Additional\n": "ADC12_IN6/COMP7_INM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC12_IN7": 1, 
+    "EVENTOUT": 1, 
+    "COMP7_INP": 1
+   }, 
+   "name": "C1", 
+   "sortingname": "C01", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC12_IN7"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "", 
+    "Name": "PC1", 
+    "LQFP64": "9", 
+    "LQFP100": "16", 
+    "Additional\n": "ADC12_IN7/COMP7_INP", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC12_IN8": 1, 
+    "COMP7_OUT": 3, 
+    "EVENTOUT": 1
+   }, 
+   "name": "C2", 
+   "sortingname": "C02", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC12_IN8"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "COMP7_OUT", 
+    "Name": "PC2", 
+    "LQFP64": "10", 
+    "LQFP100": "17", 
+    "Additional\n": "ADC12_IN8", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "MIC": "pin_clk", 
+    "EVENTOUT": 1, 
+    "ADC12_IN9": 1, 
+    "TIM1_BKIN2": 6
+   }, 
+   "name": "C3", 
+   "sortingname": "C03", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MIC"
+    ], 
+    "ADC": [
+     "ADC12_IN9"
+    ]
+   }, 
+   "num": "3", 
+   "csv": {
+    "Alternate": "TIM1_BKIN2", 
+    "Name": "PC3", 
+    "LQFP64": "11", 
+    "LQFP100": "18", 
+    "Additional\n": "ADC12_IN9", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART1_TX": 7, 
+    "ADC2_IN5": 1, 
+    "EVENTOUT": 1
+   }, 
+   "name": "C4", 
+   "sortingname": "C04", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC2_IN5"
+    ], 
+    "USART": [
+     "USART1_TX"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "USART1_TX", 
+    "Name": "PC4", 
+    "LQFP64": "24", 
+    "LQFP100": "33", 
+    "Additional\n": "ADC2_IN5", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TSC_G3_IO1ADC2_IN11": 0, 
+    "OPAMP1_VINM": 1, 
+    "TSC_G3_IO1": 3, 
+    "USART1_RX": 7, 
+    "OPAMP2_VINM": 1, 
+    "EVENTOUT": 1, 
+    "ADC2_IN11": 1
+   }, 
+   "name": "C5", 
+   "sortingname": "C05", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC2_IN11"
+    ], 
+    "USART": [
+     "USART1_RX"
+    ]
+   }, 
+   "num": "5", 
+   "csv": {
+    "Alternate": "USART1_RX/TSC_G3_IO1ADC2_IN11/OPAMP2_VINM/OPAMP1_VINM", 
+    "Name": "PC5", 
+    "LQFP64": "25", 
+    "LQFP100": "34", 
+    "Additional\n": "ADC2_IN11/OPAMP2_VINM/OPAMP1_VINM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "COMP6_OUT": 7, 
+    "TIM3_CH1": 2, 
+    "TIM8_CH1": 4, 
+    "I2S2_MCK": 6, 
+    "EVENTOUT": 1
+   }, 
+   "name": "C6", 
+   "sortingname": "C06", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM3_CH1", 
+     "TIM8_CH1"
+    ]
+   }, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "I2S2_MCK/COMP6_OUT/TIM8_CH1/TIM3_CH1", 
+    "Name": "PC6", 
+    "LQFP64": "37", 
+    "LQFP100": "63", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "COMP5_OUT": 7, 
+    "TIM3_CH2": 2, 
+    "TIM8_CH2": 4, 
+    "I2S3_MCK": 6, 
+    "AUDIO": "pin_mclk", 
+    "EVENTOUT": 1
+   }, 
+   "name": "C7", 
+   "sortingname": "C07", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "PWM": [
+     "TIM3_CH2", 
+     "TIM8_CH2"
+    ]
+   }, 
+   "num": "7", 
+   "csv": {
+    "Alternate": "I2S3_MCK/TIM8_CH2/TIM3_CH2/COMP5_OUT", 
+    "Name": "PC7", 
+    "LQFP64": "38", 
+    "LQFP100": "64", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "TIM3_CH3": 2, 
+    "COMP3_OUT": 7, 
+    "EVENTOUT": 1, 
+    "": 15, 
+    "TIM8_CH3": 4
+   }, 
+   "name": "C8", 
+   "sortingname": "C08", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM3_CH3", 
+     "TIM8_CH3"
+    ]
+   }, 
+   "num": "8", 
+   "csv": {
+    "Alternate": "TIM8_CH3/TIM3_CH3/COMP3_OUT", 
+    "Name": "PC8", 
+    "LQFP64": "39", 
+    "LQFP100": "65", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM8_CH4": 4, 
+    "TIM3_CH4": 2, 
+    "I2S_CKIN": 5, 
+    "TIM8_BKIN2": 6, 
+    "EVENTOUT": 1
+   }, 
+   "name": "C9", 
+   "sortingname": "C09", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM3_CH4", 
+     "TIM8_CH4"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "TIM8_CH4/TIM8_BKIN2/TIM3_CH4/I2S_CKIN", 
+    "Name": "PC9", 
+    "LQFP64": "40", 
+    "LQFP100": "66", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "SPI3_SCK/I2S3_CK": 6, 
+    "AUDIO": "pin_sclk", 
+    "USART3_TX": 7, 
+    "I2S3_CK": 0, 
+    "TIM8_CH1N": 4, 
+    "UART4_TX": 5, 
+    "EVENTOUT": 1, 
+    "SPI3_SCK": 0
+   }, 
+   "name": "C10", 
+   "sortingname": "C10", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "SPI": [
+     "SPI3_SCK"
+    ], 
+    "PWM": [
+     "TIM8_CH1N"
+    ], 
+    "USART": [
+     "UART4_TX", 
+     "USART3_TX"
+    ]
+   }, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "SPI3_SCK/I2S3_CK/USART3_TX/UART4_TX/TIM8_CH1N", 
+    "Name": "PC10", 
+    "LQFP64": "51", 
+    "LQFP100": "78", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 1, 
+    "UART4_RX": 5, 
+    "USART3_RX": 7, 
+    "TIM8_CH2N": 4, 
+    "SPI3_MISO/I2S3ext_SD": 6, 
+    "I2S3ext_SD": 0, 
+    "SPI3_MISO": 0
+   }, 
+   "name": "C11", 
+   "sortingname": "C11", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI3_MISO"
+    ], 
+    "PWM": [
+     "TIM8_CH2N"
+    ], 
+    "USART": [
+     "UART4_RX", 
+     "USART3_RX"
+    ]
+   }, 
+   "num": "11", 
+   "csv": {
+    "Alternate": "SPI3_MISO/I2S3ext_SD/USART3_RX/UART4_RX/TIM8_CH2N", 
+    "Name": "PC11", 
+    "LQFP64": "52", 
+    "LQFP100": "79", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "UART5_TX": 5, 
+    "": 15, 
+    "TIM8_CH3N": 4, 
+    "SPI3_MOSI/I2S3_SD": 6, 
+    "SPI3_MOSI": 0, 
+    "USART3_CK": 7, 
+    "I2S3_SD": 0, 
+    "AUDIO": "pin_sdin", 
+    "EVENTOUT": 1
+   }, 
+   "name": "C12", 
+   "sortingname": "C12", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "SPI": [
+     "SPI3_MOSI"
+    ], 
+    "PWM": [
+     "TIM8_CH3N"
+    ], 
+    "USART": [
+     "UART5_TX"
+    ]
+   }, 
+   "num": "12", 
+   "csv": {
+    "Alternate": "SPI3_MOSI/I2S3_SD/USART3_CK/UART5_TX/TIM8_CH3N", 
+    "Name": "PC12", 
+    "LQFP64": "53", 
+    "LQFP100": "80", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM1_CH1N": 4, 
+    "RTC_OUT": 1, 
+    "WKUP2": 1, 
+    "RTC_TAMP1": 1, 
+    "RTC_TS": 1
+   }, 
+   "name": "C13", 
+   "sortingname": "C13", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH1N"
+    ]
+   }, 
+   "num": "13", 
+   "csv": {
+    "Alternate": "TIM1_CH1N", 
+    "Name": "PC13", 
+    "LQFP64": "2", 
+    "LQFP100": "7", 
+    "Additional\n": "WKUP2/RTC_TAMP1/RTC_TS/RTC_OUT", 
+    "LQFP48": "2", 
+    "IO": "TC", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "OSC32_IN": 1, 
+    "OSC_RTC": "pin_1"
+   }, 
+   "name": "C14", 
+   "sortingname": "C14", 
+   "simplefunctions": {
+    "DEVICE": [
+     "OSC_RTC"
+    ]
+   }, 
+   "num": "14", 
+   "csv": {
+    "Alternate": "", 
+    "Name": "PC14-OSC32_IN(PC14)", 
+    "LQFP64": "3", 
+    "LQFP100": "8", 
+    "Additional\n": "OSC32_IN", 
+    "LQFP48": "3", 
+    "IO": "TC", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "OSC_RTC": "pin_2", 
+    "OSC32_OUT": 1
+   }, 
+   "name": "C15", 
+   "sortingname": "C15", 
+   "simplefunctions": {
+    "DEVICE": [
+     "OSC_RTC"
+    ]
+   }, 
+   "num": "15", 
+   "csv": {
+    "Alternate": "", 
+    "Name": "PC15-OSC32_OUT(PC15)", 
+    "LQFP64": "4", 
+    "LQFP100": "9", 
+    "Additional\n": "OSC32_OUT", 
+    "LQFP48": "4", 
+    "IO": "TC", 
+    "Type": "I/O"
+   }, 
+   "port": "C"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "CAN_RX": 6, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D0", 
+   "sortingname": "D00", 
+   "simplefunctions": {
+    "CAN": [
+     "CAN_RX"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "CAN_RX", 
+    "Name": "PD0", 
+    "LQFP64": "", 
+    "LQFP100": "81", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "TIM8_CH4": 3, 
+    "": 15, 
+    "TIM8_BKIN2": 5, 
+    "EVENTOUT": 0, 
+    "CAN_TX": 6
+   }, 
+   "name": "D1", 
+   "sortingname": "D01", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM8_CH4"
+    ], 
+    "CAN": [
+     "CAN_TX"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "CAN_TX/TIM8_CH4/TIM8_BKIN2", 
+    "Name": "PD1", 
+    "LQFP64": "", 
+    "LQFP100": "82", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "TIM8_BKIN": 3, 
+    "": 15, 
+    "UART5_RX": 4, 
+    "TIM3_ETR": 1, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D2", 
+   "sortingname": "D02", 
+   "simplefunctions": {
+    "USART": [
+     "UART5_RX"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "UART5_RX/TIM3_ETR/TIM8_BKIN", 
+    "Name": "PD2", 
+    "LQFP64": "54", 
+    "LQFP100": "83", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 0, 
+    "USART2_CTS": 6, 
+    "TIM2_CH1_ETR": 1
+   }, 
+   "name": "D3", 
+   "sortingname": "D03", 
+   "simplefunctions": {}, 
+   "num": "3", 
+   "csv": {
+    "Alternate": "USART2_CTS/TIM2_CH1_ETR", 
+    "Name": "PD3", 
+    "LQFP64": "", 
+    "LQFP100": "84", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "TIM2_CH2": 1, 
+    "": 15, 
+    "AUDIO": "pin_nrst", 
+    "EVENTOUT": 0, 
+    "USART2_RTS": 6
+   }, 
+   "name": "D4", 
+   "sortingname": "D04", 
+   "simplefunctions": {
+    "DEVICE": [
+     "AUDIO"
+    ], 
+    "PWM": [
+     "TIM2_CH2"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "USART2_RTS/TIM2_CH2", 
+    "Name": "PD4", 
+    "LQFP64": "", 
+    "LQFP100": "85", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART2_TX": 6, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D5", 
+   "sortingname": "D05", 
+   "simplefunctions": {
+    "USART": [
+     "USART2_TX"
+    ]
+   }, 
+   "num": "5", 
+   "csv": {
+    "Alternate": "USART2_TX", 
+    "Name": "PD5", 
+    "LQFP64": "", 
+    "LQFP100": "86", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART2_RX": 6, 
+    "EVENTOUT": 0, 
+    "TIM2_CH4": 1
+   }, 
+   "name": "D6", 
+   "sortingname": "D06", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM2_CH4"
+    ], 
+    "USART": [
+     "USART2_RX"
+    ]
+   }, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "USART2_RX/TIM2_CH4", 
+    "Name": "PD6", 
+    "LQFP64": "", 
+    "LQFP100": "87", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART2_CK": 6, 
+    "EVENTOUT": 0, 
+    "TIM2_CH3": 1
+   }, 
+   "name": "D7", 
+   "sortingname": "D07", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM2_CH3"
+    ]
+   }, 
+   "num": "7", 
+   "csv": {
+    "Alternate": "USART2_CK/TIM2_CH3", 
+    "Name": "PD7", 
+    "LQFP64": "", 
+    "LQFP100": "88", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC4_IN12": 1, 
+    "USART3_TX": 6, 
+    "OPAMP4_VINM": 1, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D8", 
+   "sortingname": "D08", 
+   "simplefunctions": {
+    "USART": [
+     "USART3_TX"
+    ]
+   }, 
+   "num": "8", 
+   "csv": {
+    "Alternate": "USART3_TX", 
+    "Name": "PD8", 
+    "LQFP64": "", 
+    "LQFP100": "55", 
+    "Additional\n": "ADC4_IN12/OPAMP4_VINM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART3_RX": 6, 
+    "EVENTOUT": 0, 
+    "ADC4_IN13": 1
+   }, 
+   "name": "D9", 
+   "sortingname": "D09", 
+   "simplefunctions": {
+    "USART": [
+     "USART3_RX"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "USART3_RX", 
+    "Name": "PD9", 
+    "LQFP64": "", 
+    "LQFP100": "56", 
+    "Additional\n": "ADC4_IN13", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "USART3_CK": 6, 
+    "COMP6_INM": 1, 
+    "EVENTOUT": 0, 
+    "ADC34_IN7": 1
+   }, 
+   "name": "D10", 
+   "sortingname": "D10", 
+   "simplefunctions": {}, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "USART3_CK", 
+    "Name": "PD10", 
+    "LQFP64": "", 
+    "LQFP100": "57", 
+    "Additional\n": "ADC34_IN7/COMP6_INM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "COMP6_INP": 1, 
+    "OPAMP4_VINP": 1, 
+    "ADC34_IN8": 1, 
+    "USART3_CTS": 6, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D11", 
+   "sortingname": "D11", 
+   "simplefunctions": {}, 
+   "num": "11", 
+   "csv": {
+    "Alternate": "USART3_CTS", 
+    "Name": "PD11", 
+    "LQFP64": "", 
+    "LQFP100": "58", 
+    "Additional\n": "ADC34_IN8/COMP6_INP/OPAMP4_VINP", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 0, 
+    "ADC34_IN9": 1, 
+    "TIM4_CH1": 1, 
+    "COMP5_INP": 1, 
+    "TSC_G8_IO1": 2, 
+    "USART3_RTS": 6
+   }, 
+   "name": "D12", 
+   "sortingname": "D12", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM4_CH1"
+    ]
+   }, 
+   "num": "12", 
+   "csv": {
+    "Alternate": "USART3_RTS/TIM4_CH1/TSC_G8_IO1", 
+    "Name": "PD12", 
+    "LQFP64": "", 
+    "LQFP100": "59", 
+    "Additional\n": "ADC34_IN9/COMP5_INP", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM4_CH2": 1, 
+    "COMP5_INM": 1, 
+    "TSC_G8_IO2": 2, 
+    "EVENTOUT": 0, 
+    "ADC34_IN10": 1
+   }, 
+   "name": "D13", 
+   "sortingname": "D13", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM4_CH2"
+    ]
+   }, 
+   "num": "13", 
+   "csv": {
+    "Alternate": "TIM4_CH2/TSC_G8_IO2", 
+    "Name": "PD13", 
+    "LQFP64": "", 
+    "LQFP100": "60", 
+    "Additional\n": "ADC34_IN10/COMP5_INM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC34_IN11": 1, 
+    "OPAMP2_VINP": 1, 
+    "TIM4_CH3": 1, 
+    "TSC_G8_IO3": 2, 
+    "COMP3_INP": 1, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D14", 
+   "sortingname": "D14", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM4_CH3"
+    ]
+   }, 
+   "num": "14", 
+   "csv": {
+    "Alternate": "TIM4_CH3/TSC_G8_IO3", 
+    "Name": "PD14", 
+    "LQFP64": "", 
+    "LQFP100": "61", 
+    "Additional\n": "COMP3_INP/ADC34_IN11/OPAMP2_VINP", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM4_CH4": 1, 
+    "COMP3_INM": 1, 
+    "TSC_G8_IO4": 2, 
+    "SPI2_NSS": 5, 
+    "EVENTOUT": 0
+   }, 
+   "name": "D15", 
+   "sortingname": "D15", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM4_CH4"
+    ]
+   }, 
+   "num": "15", 
+   "csv": {
+    "Alternate": "SPI2_NSS/TIM4_CH4/TSC_G8_IO4", 
+    "Name": "PD15", 
+    "LQFP64": "", 
+    "LQFP100": "62", 
+    "Additional\n": "COMP3_INM", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "D"
+  }, 
+  {
+   "functions": {
+    "TIM4_ETR": 2, 
+    "": 15, 
+    "USART1_TX": 6, 
+    "GYRO": "pin_int1", 
+    "TIM16_CH1": 4, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E0", 
+   "sortingname": "E00", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "PWM": [
+     "TIM16_CH1"
+    ], 
+    "USART": [
+     "USART1_TX"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "USART1_TX/TIM4_ETR/TIM16_CH1", 
+    "Name": "PE0", 
+    "LQFP64": "", 
+    "LQFP100": "97", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "TIM17_CH1": 4, 
+    "": 15, 
+    "USART1_RX": 6, 
+    "EVENTOUT": 1, 
+    "GYRO": "pin_int2"
+   }, 
+   "name": "E1", 
+   "sortingname": "E01", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "PWM": [
+     "TIM17_CH1"
+    ], 
+    "USART": [
+     "USART1_RX"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "USART1_RX/TIM17_CH1", 
+    "Name": "PE1", 
+    "LQFP64": "", 
+    "LQFP100": "98", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM3_CH1": 2, 
+    "TRACECK": 0, 
+    "MEMS": "pin_drdy", 
+    "EVENTOUT": 1, 
+    "TSC_G7_IO1": 3
+   }, 
+   "name": "E2", 
+   "sortingname": "E02", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MEMS"
+    ], 
+    "PWM": [
+     "TIM3_CH1"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "TRACECK/TIM3_CH1/TSC_G7_IO1", 
+    "Name": "PE2", 
+    "LQFP64": "", 
+    "LQFP100": "1", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM3_CH2": 2, 
+    "TRACED0": 0, 
+    "GYRO": "pin_cs", 
+    "EVENTOUT": 1, 
+    "TSC_G7_IO2": 3
+   }, 
+   "name": "E3", 
+   "sortingname": "E03", 
+   "simplefunctions": {
+    "DEVICE": [
+     "GYRO"
+    ], 
+    "PWM": [
+     "TIM3_CH2"
+    ]
+   }, 
+   "num": "3", 
+   "csv": {
+    "Alternate": "TRACED0/TIM3_CH2/TSC_G7_IO2", 
+    "Name": "PE3", 
+    "LQFP64": "", 
+    "LQFP100": "2", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM3_CH3": 2, 
+    "TRACED1": 0, 
+    "MEMS": "pin_int1", 
+    "EVENTOUT": 1, 
+    "TSC_G7_IO3": 3
+   }, 
+   "name": "E4", 
+   "sortingname": "E04", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MEMS"
+    ], 
+    "PWM": [
+     "TIM3_CH3"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "TRACED1/TIM3_CH3/TSC_G7_IO3", 
+    "Name": "PE4", 
+    "LQFP64": "", 
+    "LQFP100": "3", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM3_CH4": 2, 
+    "TRACED2": 0, 
+    "MEMS": "pin_int2", 
+    "TSC_G7_IO4": 3, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E5", 
+   "sortingname": "E05", 
+   "simplefunctions": {
+    "DEVICE": [
+     "MEMS"
+    ], 
+    "PWM": [
+     "TIM3_CH4"
+    ]
+   }, 
+   "num": "5", 
+   "csv": {
+    "Alternate": "TRACED2/TIM3_CH4/TSC_G7_IO4", 
+    "Name": "PE5", 
+    "LQFP64": "", 
+    "LQFP100": "4", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "RTC_TAMP3": 1, 
+    "WKUP3": 1, 
+    "TRACED3": 0, 
+    "EVENTOUT": 1, 
+    "": 15
+   }, 
+   "name": "E6", 
+   "sortingname": "E06", 
+   "simplefunctions": {}, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "TRACED3", 
+    "Name": "PE6", 
+    "LQFP64": "", 
+    "LQFP100": "5", 
+    "Additional\n": "WKUP3/RTC_TAMP3", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "COMP4_INP": 1, 
+    "ADC3_IN13": 1, 
+    "TIM1_ETR": 2, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E7", 
+   "sortingname": "E07", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC3_IN13"
+    ]
+   }, 
+   "num": "7", 
+   "csv": {
+    "Alternate": "TIM1_ETR", 
+    "Name": "PE7", 
+    "LQFP64": "", 
+    "LQFP100": "38", 
+    "Additional\n": "ADC3_IN13/COMP4_INP", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM1_CH1N": 2, 
+    "LED2": "pin", 
+    "COMP4_INM": 1, 
+    "EVENTOUT": 1, 
+    "ADC34_IN6": 1
+   }, 
+   "name": "E8", 
+   "sortingname": "E08", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED2"
+    ], 
+    "PWM": [
+     "TIM1_CH1N"
+    ]
+   }, 
+   "num": "8", 
+   "csv": {
+    "Alternate": "TIM1_CH1N", 
+    "Name": "PE8", 
+    "LQFP64": "", 
+    "LQFP100": "39", 
+    "Additional\n": "COMP4_INM/ADC34_IN6", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC3_IN2": 1, 
+    "LED1": "pin", 
+    "TIM1_CH1": 2, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E9", 
+   "sortingname": "E09", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED1"
+    ], 
+    "PWM": [
+     "TIM1_CH1"
+    ], 
+    "ADC": [
+     "ADC3_IN2"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "TIM1_CH1", 
+    "Name": "PE9", 
+    "LQFP64": "", 
+    "LQFP100": "40", 
+    "Additional\n": "ADC3_IN2", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM1_CH2N": 2, 
+    "ADC3_IN14": 1, 
+    "EVENTOUT": 1, 
+    "LED3": "pin"
+   }, 
+   "name": "E10", 
+   "sortingname": "E10", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED3"
+    ], 
+    "PWM": [
+     "TIM1_CH2N"
+    ], 
+    "ADC": [
+     "ADC3_IN14"
+    ]
+   }, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "TIM1_CH2N", 
+    "Name": "PE10", 
+    "LQFP64": "", 
+    "LQFP100": "41", 
+    "Additional\n": "ADC3_IN14", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "LED5": "pin", 
+    "ADC3_IN15": 1, 
+    "EVENTOUT": 1, 
+    "TIM1_CH2": 2
+   }, 
+   "name": "E11", 
+   "sortingname": "E11", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED5"
+    ], 
+    "PWM": [
+     "TIM1_CH2"
+    ], 
+    "ADC": [
+     "ADC3_IN15"
+    ]
+   }, 
+   "num": "11", 
+   "csv": {
+    "Alternate": "TIM1_CH2", 
+    "Name": "PE11", 
+    "LQFP64": "", 
+    "LQFP100": "42", 
+    "Additional\n": "ADC3_IN15", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "ADC3_IN16": 1, 
+    "EVENTOUT": 1, 
+    "TIM1_CH3N": 2, 
+    "LED7": "pin"
+   }, 
+   "name": "E12", 
+   "sortingname": "E12", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH3N"
+    ], 
+    "ADC": [
+     "ADC3_IN16"
+    ]
+   }, 
+   "num": "12", 
+   "csv": {
+    "Alternate": "TIM1_CH3N", 
+    "Name": "PE12", 
+    "LQFP64": "", 
+    "LQFP100": "43", 
+    "Additional\n": "ADC3_IN16", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "ADC3_IN3": 1, 
+    "": 15, 
+    "EVENTOUT": 1, 
+    "TIM1_CH3": 2, 
+    "LED8": "pin"
+   }, 
+   "name": "E13", 
+   "sortingname": "E13", 
+   "simplefunctions": {
+    "PWM": [
+     "TIM1_CH3"
+    ], 
+    "ADC": [
+     "ADC3_IN3"
+    ]
+   }, 
+   "num": "13", 
+   "csv": {
+    "Alternate": "TIM1_CH3", 
+    "Name": "PE13", 
+    "LQFP64": "", 
+    "LQFP100": "44", 
+    "Additional\n": "ADC3_IN3", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM1_CH4": 2, 
+    "ADC4_IN1": 1, 
+    "LED6": "pin", 
+    "TIM1_BKIN2": 5, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E14", 
+   "sortingname": "E14", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED6"
+    ], 
+    "PWM": [
+     "TIM1_CH4"
+    ]
+   }, 
+   "num": "14", 
+   "csv": {
+    "Alternate": "TIM1_CH4/TIM1_BKIN2", 
+    "Name": "PE14", 
+    "LQFP64": "", 
+    "LQFP100": "45", 
+    "Additional\n": "ADC4_IN1", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "LED4": "pin", 
+    "ADC4_IN2": 1, 
+    "USART3_RX": 6, 
+    "TIM1_BKIN": 2, 
+    "EVENTOUT": 1
+   }, 
+   "name": "E15", 
+   "sortingname": "E15", 
+   "simplefunctions": {
+    "DEVICE": [
+     "LED4"
+    ], 
+    "USART": [
+     "USART3_RX"
+    ]
+   }, 
+   "num": "15", 
+   "csv": {
+    "Alternate": "USART3_RX/TIM1_BKIN", 
+    "Name": "PE15", 
+    "LQFP64": "", 
+    "LQFP100": "46", 
+    "Additional\n": "ADC4_IN2", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "E"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "OSC": "pin_1", 
+    "OSC_IN": 1, 
+    "TIM1_CH3N": 6, 
+    "I2C2_SDA": 4
+   }, 
+   "name": "F0", 
+   "sortingname": "F00", 
+   "simplefunctions": {
+    "DEVICE": [
+     "OSC"
+    ], 
+    "I2C": [
+     "I2C2_SDA"
+    ], 
+    "PWM": [
+     "TIM1_CH3N"
+    ]
+   }, 
+   "num": "0", 
+   "csv": {
+    "Alternate": "TIM1_CH3N/I2C2_SDA", 
+    "Name": "PF0-OSC_IN(PF0)", 
+    "LQFP64": "5", 
+    "LQFP100": "12", 
+    "Additional\n": "OSC_IN", 
+    "LQFP48": "5", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "OSC": "pin_2", 
+    "I2C2_SCL": 4, 
+    "OSC_OUT": 1
+   }, 
+   "name": "F1", 
+   "sortingname": "F01", 
+   "simplefunctions": {
+    "DEVICE": [
+     "OSC"
+    ], 
+    "I2C": [
+     "I2C2_SCL"
+    ]
+   }, 
+   "num": "1", 
+   "csv": {
+    "Alternate": "I2C2_SCL", 
+    "Name": "PF1-OSC_OUT(PF1)", 
+    "LQFP64": "6", 
+    "LQFP100": "13", 
+    "Additional\n": "OSC_OUT", 
+    "LQFP48": "6", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 1, 
+    "ADC12_IN10": 1
+   }, 
+   "name": "F2", 
+   "sortingname": "F02", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC12_IN10"
+    ]
+   }, 
+   "num": "2", 
+   "csv": {
+    "Alternate": "", 
+    "Name": "PF2", 
+    "LQFP64": "", 
+    "LQFP100": "19", 
+    "Additional\n": "ADC12_IN10", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {}, 
+   "name": "F3", 
+   "sortingname": "F03", 
+   "simplefunctions": {}, 
+   "num": "3", 
+   "port": "_NONE"
+  }, 
+  {
+   "functions": {
+    "ADC1_IN5": 1, 
+    "": 15, 
+    "COMP1_OUT": 2, 
+    "EVENTOUT": 1
+   }, 
+   "name": "F4", 
+   "sortingname": "F04", 
+   "simplefunctions": {
+    "ADC": [
+     "ADC1_IN5"
+    ]
+   }, 
+   "num": "4", 
+   "csv": {
+    "Alternate": "COMP1_OUT", 
+    "Name": "PF4", 
+    "LQFP64": "18", 
+    "LQFP100": "27", 
+    "Additional\n": "ADC1_IN5", 
+    "LQFP48": "", 
+    "IO": "TTa", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {}, 
+   "name": "F5", 
+   "sortingname": "F05", 
+   "simplefunctions": {}, 
+   "num": "5", 
+   "port": "_NONE"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "TIM4_CH4": 2, 
+    "USART3_RTS": 7, 
+    "I2C2_SCL": 4, 
+    "EVENTOUT": 1
+   }, 
+   "name": "F6", 
+   "sortingname": "F06", 
+   "simplefunctions": {
+    "I2C": [
+     "I2C2_SCL"
+    ], 
+    "PWM": [
+     "TIM4_CH4"
+    ]
+   }, 
+   "num": "6", 
+   "csv": {
+    "Alternate": "I2C2_SCL/USART3_RTS/TIM4_CH4", 
+    "Name": "PF6", 
+    "LQFP64": "", 
+    "LQFP100": "73", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FTf", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {}, 
+   "name": "F7", 
+   "sortingname": "F07", 
+   "simplefunctions": {}, 
+   "num": "7", 
+   "port": "_NONE"
+  }, 
+  {
+   "functions": {}, 
+   "name": "F8", 
+   "sortingname": "F08", 
+   "simplefunctions": {}, 
+   "num": "8", 
+   "port": "_NONE"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 1, 
+    "SPI2_SCK": 5, 
+    "TIM15_CH1": 3
+   }, 
+   "name": "F9", 
+   "sortingname": "F09", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI2_SCK"
+    ], 
+    "PWM": [
+     "TIM15_CH1"
+    ]
+   }, 
+   "num": "9", 
+   "csv": {
+    "Alternate": "TIM15_CH1/SPI2_SCK", 
+    "Name": "PF9", 
+    "LQFP64": "", 
+    "LQFP100": "10", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }, 
+  {
+   "functions": {
+    "": 15, 
+    "EVENTOUT": 1, 
+    "SPI2_SCK": 5, 
+    "TIM15_CH2": 3
+   }, 
+   "name": "F10", 
+   "sortingname": "F10", 
+   "simplefunctions": {
+    "SPI": [
+     "SPI2_SCK"
+    ], 
+    "PWM": [
+     "TIM15_CH2"
+    ]
+   }, 
+   "num": "10", 
+   "csv": {
+    "Alternate": "TIM15_CH2/SPI2_SCK", 
+    "Name": "PF10", 
+    "LQFP64": "", 
+    "LQFP100": "11", 
+    "Additional\n": "", 
+    "LQFP48": "", 
+    "IO": "FT", 
+    "Type": "I/O"
+   }, 
+   "port": "F"
+  }
+ ]
+}

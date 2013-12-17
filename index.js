@@ -1,11 +1,15 @@
 /* Licensed under the MIT License. See the accompanying LICENSE file for terms. */
 
-var readline = require('readline'),
+var repl = require('repl'), // https://github.com/joyent/node/blob/master/lib/repl.js
+    util = require('util'),
+    vm = require('vm'),
     async = require('async'),
     serialport = require('serialport'),
     SerialPort = serialport.SerialPort,
+    espruinoStub = require('./data/stub'),
     connected = false,
     candidates = [],
+    context,
     input,
     esp;
 
@@ -29,48 +33,50 @@ function attempt() {
     });
 }
 
-function close() {
-    input.close();
-    onLine('reset()');
-    esp.close();
-}
+function write(code, context, file, cb) {
+    var err,
+        result;
 
-function autoComplete(line) {
-    var completions = '.help .exit .quit .q'.split(' '),
-        hits = completions.filter(function(c) { return c.indexOf(line) == 0 });
-    return [hits.length ? hits : completions, line]
-}
+    // strip repl's wrapping bs
+    code = code.replace(/^\(|\n\)$/g, '');
 
-function onLine(line) {
-    switch (line) {
-        case '.help':
-            process.stdout.write('Help text!\n');
-        break;
-        case '.q':
-        case '.quit':
-        case '.exit':
-            close();
-        break;
-        default:
-            esp.write(line + '\r');
-        break;
+    // first, create the Script object to check the syntax
+    try {
+        var script = vm.createScript(code, {
+            filename: file,
+            displayErrors: false
+        });
+    } catch (e) {
+        // pass through unexpected end of input to handle multiline
+        if (e.name === 'SyntaxError' && /^Unexpected end of input/.test(e.message)) {
+           err = e;
+        }
     }
-}
 
-function onCtrlC() {
-    process.stdout.write('(^C again to quit)');
-    close();
+    if (code) {
+        if (!err) {
+            try {
+                result = script.runInContext(context, {displayErrors: false});
+            } catch (e) {
+            }
+
+            // let autocomplete pass thru
+            result = context[code];
+            if (!result) {
+                esp.write(code + '\n');
+            }
+        }
+    }
+
+    cb(err, result);
 }
 
 function startUi() {
     // start readline ui
-    input = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-        completer: autoComplete
-    });
-    input.on('line', onLine);
-    input.on('SIGINT', onCtrlC);
+    input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: write});
+
+    // replace context to get closer to espruino environment
+    input.context = vm.createContext(espruinoStub);
 }
 
 function onData(data) {
@@ -93,8 +99,8 @@ function analyze(port, cb) {
         if (id.match('Espruino') || id.match('STM32')) {
             console.log('Found compatible Espruino device! --^');
             console.log('Connecting...');
-            startUi();
             connect(dev);
+            startUi();
         } else {
             console.log('No Espruino found, continuing. --^');
         }

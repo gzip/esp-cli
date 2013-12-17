@@ -7,10 +7,15 @@ var repl = require('repl'), // https://github.com/joyent/node/blob/master/lib/re
     serialport = require('serialport'),
     SerialPort = serialport.SerialPort,
     espruinoStub = require('./data/stub'),
+    resultMatch = /^=(.+)$/m,
+    receiveCallback,
+    receiveBuffer = '',
+    boardInfo = {},
     connected = false,
     candidates = [],
     context,
     input,
+    env = {},
     esp;
 
 function readPorts(err, ports) {
@@ -33,63 +38,6 @@ function attempt() {
     });
 }
 
-function write(code, context, file, cb) {
-    var err,
-        result;
-
-    // strip repl's wrapping bs
-    code = code.replace(/^\(|\n\)$/g, '');
-
-    // first, create the Script object to check the syntax
-    try {
-        var script = vm.createScript(code, {
-            filename: file,
-            displayErrors: false
-        });
-    } catch (e) {
-        // pass through unexpected end of input to handle multiline
-        if (e.name === 'SyntaxError' && /^Unexpected end of input/.test(e.message)) {
-           err = e;
-        }
-    }
-
-    if (code) {
-        if (!err) {
-            try {
-                result = script.runInContext(context, {displayErrors: false});
-            } catch (e) {
-            }
-
-            // let autocomplete pass thru
-            result = context[code];
-            if (!result) {
-                esp.write(code + '\n');
-            }
-        }
-    }
-
-    cb(err, result);
-}
-
-function startUi() {
-    // start readline ui
-    input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: write});
-
-    // replace context to get closer to espruino environment
-    input.context = vm.createContext(espruinoStub);
-}
-
-function onData(data) {
-    process.stdout.write(data.toString());
-}
-
-function connect(dev) {
-    // connect to espruino
-    esp = new SerialPort(dev, {});
-    esp.on('data', onData);
-    connected = true;
-}
-
 function analyze(port, cb) {
     if (!connected) {
         var dev = port.comName,
@@ -100,13 +48,127 @@ function analyze(port, cb) {
             console.log('Found compatible Espruino device! --^');
             console.log('Connecting...');
             connect(dev);
-            startUi();
         } else {
             console.log('No Espruino found, continuing. --^');
         }
     }
 
     cb(null);
+}
+
+function connect(dev) {
+    // connect to espruino
+    esp = new SerialPort(dev, {});
+    esp.on('open', init);
+    esp.on('data', receive);
+    connected = true;
+}
+
+function init() {
+    // start readline ui
+    input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: evalLine});
+
+    // replace context to get closer to espruino environment
+    context = vm.createContext(espruinoStub);
+    input.context = context;
+
+    // get board info
+    query('process.env', function (e, details) {
+        if (!e) {
+            env = details || {};
+            loadBoardInfo(env.BOARD);
+        }
+    });
+}
+
+function loadBoardInfo(board) {
+    if (board) {
+        try {
+            boardInfo = require('./data/boards/' + board);
+            // populate pins for autocomplete
+            (boardInfo.pins || []).forEach(function eachPin(pin) {
+                context[pin.name] = 1;
+            });
+        } catch(e) {
+            receive('Unable to load board info for ' + board);
+        }
+    }
+}
+
+function query(code, cb) {
+    receiveCallback = cb;
+    send(code);
+}
+
+function send(code) {
+    esp.write(code + '\n');
+}
+
+function receive(data) {
+    data = data.toString();
+    if (receiveCallback) {
+        receiveBuffer += data;
+        var match = data.match(/\r>$/m) ? resultMatch.exec(receiveBuffer) : null;
+        if (match) {
+            try {
+                var result = JSON.parse(match[1]);
+                receiveCallback(null, result);
+            } catch (e) {
+                // buffer isn't finished so continue
+                if (isRecoverableError(e)) {
+                    return;
+                }
+                receiveCallback(e);
+            }
+            receiveCallback = null;
+            receiveBuffer = '';
+        }
+    } else {
+        process.stdout.write(data);
+    }
+}
+
+function evalLine(code, context, file, cb) {
+    var err,
+        result;
+
+    // strip repl's wrapping bs
+    code = code.replace(/^\(|\n\)$/g, '');
+
+    // first, create the script object to check the syntax
+    try {
+        var script = vm.createScript(code, {
+            filename: file,
+            displayErrors: false
+        });
+    } catch (e) {
+        // pass through unexpected end of input to handle multiline
+        if (isRecoverableError(e)) {
+           err = e;
+        }
+    }
+
+    if (code) {
+        if (!err) {
+            try {
+                // this retains a rough approximation of the board state
+                result = script.runInContext(context, {displayErrors: false});
+            } catch (e) {
+            }
+
+            // let autocomplete pass thru w/o write
+            result = context[code];
+            if (!result) {
+                send(code);
+            }
+        }
+    }
+
+    cb(err, result);
+}
+
+function isRecoverableError(e) {
+    return e && e.name === 'SyntaxError' && /^Unexpected end of input/.test(e.message);
 }
 
 console.log('Searching for Espruino compatible device...');

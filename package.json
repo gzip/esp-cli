@@ -1,6 +1,6 @@
 {
-  "name": "esp-cli",
-  "version": "0.0.0",
+  "name": "espruino-cli",
+  "version": "0.0.1",
   "description": "Command Line Interface for Espruino",
   "main": "index.js",
   "bin": {

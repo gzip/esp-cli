@@ -14,6 +14,7 @@ var repl = require('repl'), // https://github.com/joyent/node/blob/master/lib/re
     connected = false,
     candidates = [],
     context,
+    queue = [],
     input,
     env = {},
     esp;
@@ -33,7 +34,7 @@ function attempt() {
     async.series(candidates, function done(err) {
         if (!connected) {
             var msg = candidates.length ? 'Espruino not found!' : 'No connected devices found!';
-            console.log(msg + 'Make sure Espruino is plugged in.');
+            console.log(msg + ' Make sure Espruino is plugged in.');
         }
     });
 }
@@ -72,6 +73,9 @@ function init() {
     context = vm.createContext(espruinoStub);
     input.context = context;
 
+    // set up queue interval
+    setInterval(flush, 1);
+
     // get board info
     query('process.env', function (e, details) {
         if (!e) {
@@ -101,7 +105,16 @@ function query(code, cb) {
 }
 
 function send(code) {
-    esp.write(code + '\n');
+    var lines = code.split('\n');
+    lines.forEach(function (line) {
+      queue.push(line);
+    });
+}
+
+function flush(code) {
+    if (queue.length) {
+      esp.write(queue.shift() + '\n');
+    }
 }
 
 function receive(data) {

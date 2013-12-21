@@ -2,18 +2,20 @@
 
 Command Line Interface for Espruino
 
+## Install
+```
+npm i -g espruino-cli
+```
+Use `sudo` if npm complains about permissions.
+
 ## Running
 
-This package is not yet published. To run the CLI clone this repo, install, and execute.
+It should detect and connect to your device automatically if plugged in.
 
- ```
- git clone https://github.com/gzip/esp-cli.git
- cd esp-cli
- npm i
- ./bin/esp
- ```
-
-Auto complete is supported via the tab key. To quit type `.quit`.
+```
+esp
+```
+Auto complete is supported via the tab key. To quit type `.exit` followed by `ctrl-c`.
 
 ## License
 

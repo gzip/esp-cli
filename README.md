@@ -15,7 +15,7 @@ It should detect and connect to your device automatically if plugged in.
 ```
 esp
 ```
-Auto complete is supported via the tab key. To quit type `.exit` followed by `ctrl-c`.
+Auto complete is supported via the tab key. More options are available via `.help`. To quit type `.exit`.
 
 ## License
 

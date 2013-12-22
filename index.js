@@ -62,12 +62,14 @@ function connect(dev) {
     esp = new SerialPort(dev, {});
     esp.on('open', init);
     esp.on('data', receive);
+    esp.on('close', exit);
     connected = true;
 }
 
 function init() {
     // start readline ui
     input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: evalLine});
+    input.on('exit', exit);
 
     // replace context to get closer to espruino environment
     context = vm.createContext(espruinoStub);
@@ -83,6 +85,11 @@ function init() {
             loadBoardInfo(env.BOARD);
         }
     });
+}
+
+function exit(e) {
+    console.log('Disconnecting...');
+    process.exit();
 }
 
 function loadBoardInfo(board) {
@@ -107,13 +114,13 @@ function query(code, cb) {
 function send(code) {
     var lines = code.split('\n');
     lines.forEach(function (line) {
-      queue.push(line);
+        queue.push(line);
     });
 }
 
 function flush(code) {
     if (queue.length) {
-      esp.write(queue.shift() + '\n');
+        esp.write(queue.shift() + '\n');
     }
 }
 

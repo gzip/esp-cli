@@ -75,8 +75,16 @@ function init() {
     input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: evalLine});
     input.on('exit', exit);
     input.defineCommand('module', {
-        help: 'Add a module for require.',
+        help: 'Add a module for require',
         action: loadModule
+    });
+    input.defineCommand('version', {
+        help: 'Display version information',
+        action: function () {
+            var espVer = env.VERSION;
+            console.log('CLI: ' + version + (espVer ? ', Espruino: ' + espVer : ''));
+            input.displayPrompt();
+        }
     });
 
     // replace context to get closer to espruino environment

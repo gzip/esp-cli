@@ -3,9 +3,13 @@
 var repl = require('repl'), // https://github.com/joyent/node/blob/master/lib/repl.js
     util = require('util'),
     vm = require('vm'),
+    fs = require('fs'),
     async = require('async'),
+    http = require('http'),
+    libUrl = require('url'),
     serialport = require('serialport'),
     SerialPort = serialport.SerialPort,
+    version = require('./package').version,
     espruinoStub = require('./data/stub'),
     resultMatch = /^=(.+)$/m,
     receiveCallback,
@@ -67,9 +71,13 @@ function connect(dev) {
 }
 
 function init() {
-    // start readline ui
+    // start repl ui
     input = repl.start({prompt: ">", useGlobal: true, useColors: true, ignoreUndefined: true, eval: evalLine});
     input.on('exit', exit);
+    input.defineCommand('module', {
+        help: 'Add a module for require.',
+        action: loadModule
+    });
 
     // replace context to get closer to espruino environment
     context = vm.createContext(espruinoStub);
@@ -114,7 +122,9 @@ function query(code, cb) {
 function send(code) {
     var lines = code.split('\n');
     lines.forEach(function (line) {
-        queue.push(line);
+        if (line) {
+            queue.push(line);
+        }
     });
 }
 
@@ -185,6 +195,81 @@ function evalLine(code, context, file, cb) {
     }
 
     cb(err, result);
+}
+
+function loadModule(args) {
+    var self = this,
+        args = args && args.length ? args.split(' ') : [],
+        base = 'http://www.espruino.com/modules/{mod}.min.js',
+        mod = args[0],
+        url, path, msg, code, body = '',
+        log = function (msg, prompt) {
+            console.log(msg);
+            if (prompt !== false) {
+                input.displayPrompt();
+            }
+        },
+        add = function (body) {
+            if (body) {
+                send('echo(0);');
+                // hack to work around Espruino buffer errors (introduces escaped line breaks to allow queueing)
+                body = JSON.stringify(body).replace(/;/g, ';\\\n')
+                var code = 'Modules.addCached("' + mod + '", ' + body + '); echo(1)';
+                send(code);
+            }
+        };
+
+    switch (args.length) {
+        case 0:
+            msg = 'Expected a module name and optional URL / file path.';
+        break;
+        case 1:
+            url = base.replace('{mod}', args[0]);
+        break;
+        case 2:
+            if (args[1].substr(0, 5) === 'http:') {
+                url = args[1];
+            } else {
+                path = args[1];
+            }
+        break;
+        default:
+            msg = 'Unexpected number of arguments.';
+        break;
+    }
+
+    if (url) {
+        log('Attempting to fetch module "' + mod + '" from ' + url + '...', false);
+        var options = libUrl.parse(url);
+        options.headers = {'User-Agent': 'Espruino CLI/' + version};
+        http.get(options, function(res) {
+            res.on('data', function (chunk) {
+                body += chunk;
+            });
+            res.on('end', function (chunk) {
+                if (res.statusCode === 200) {
+                    log('Module fetched, sending to Espruino...', false);
+                    add(body);
+                } else {
+                    log('Error fetching module "' + mod + '"!');
+                }
+            });
+        }).on('error', function(e) {
+            log('Error fetching module "' + mod + '"!');
+        });
+    } else if (path) {
+        log('Attempting to load module "' + mod + '" from ' + path + '...', false);
+        try {
+            body = fs.readFileSync(path, {encoding: 'utf-8'});
+            add(body);
+        } catch (e) {
+            log('Error loading module "' + mod + '"!');
+        }
+    }
+
+    if (msg) {
+        log(msg);
+    }
 }
 
 function isRecoverableError(e) {

@@ -220,10 +220,7 @@ function loadModule(args) {
         add = function (body) {
             if (body) {
                 send('echo(0);');
-                // hack to work around Espruino buffer errors (introduces escaped line breaks to allow queueing)
-                body = JSON.stringify(body).replace(/;/g, ';\\\n')
-                var code = 'Modules.addCached("' + mod + '", ' + body + '); echo(1)';
-                send(code);
+                send('Modules.addCached("' + mod + '", ' + JSON.stringify(body) + '); echo(1)');
             }
         };
 

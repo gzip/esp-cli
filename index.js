@@ -18,7 +18,7 @@ var repl = require('repl'), // https://github.com/joyent/node/blob/master/lib/re
     connected = false,
     candidates = [],
     context,
-    queue = [],
+    buffer = '',
     input,
     env = {},
     esp;
@@ -84,7 +84,7 @@ function init() {
     input.context = context;
 
     // set up queue interval
-    setInterval(flush, 1);
+    setInterval(flush, 5);
 
     // get board info
     query('process.env', function (e, details) {
@@ -120,17 +120,14 @@ function query(code, cb) {
 }
 
 function send(code) {
-    var lines = code.split('\n');
-    lines.forEach(function (line) {
-        if (line) {
-            queue.push(line);
-        }
-    });
+    buffer += code + '\n';
 }
 
-function flush(code) {
-    if (queue.length) {
-        esp.write(queue.shift() + '\n');
+function flush() {
+    if (buffer.length) {
+        var chunk = buffer.substr(0, 32);
+        buffer = buffer.substr(32);
+        esp.write(chunk);
     }
 }
 

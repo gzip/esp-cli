@@ -172,15 +172,18 @@ function evalLine(code, context, file, cb) {
         // pass through unexpected end of input to handle multiline
         if (isRecoverableError(e)) {
            err = e;
-        }
+        }// else console.dir(e)
     }
 
     if (code) {
         if (!err) {
-            try {
-                // this retains a rough approximation of the board state
-                result = script.runInContext(context, {displayErrors: false});
-            } catch (e) {
+            if (script) {
+                try {
+                    // this retains a rough approximation of the board state
+                    result = script.runInContext(context, {displayErrors: false});
+                } catch (e) {
+                    //console.dir(e)
+                }
             }
 
             // let autocomplete pass thru w/o write
@@ -270,7 +273,7 @@ function loadModule(args) {
 }
 
 function isRecoverableError(e) {
-    return e && e.name === 'SyntaxError' && /^Unexpected end of input/.test(e.message);
+    return e && e.name === 'SyntaxError' && (/^Unexpected end of input/.test(e.message) || /^Unexpected token ILLEGAL/.test(e.message));
 }
 
 console.log('Searching for Espruino compatible device...');

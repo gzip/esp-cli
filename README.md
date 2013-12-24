@@ -26,7 +26,7 @@ In some cases you may need to require external modules. In order to do so you mu
 >var nunchuck = require("wii_nunchuck");
 ```
 
-By default the module command will look for modules at (http://www.espruino.com/modules/)[espruino.com/modules/] but an arbitrary URL or file path may also be provided.
+By default the module command will look for modules at [espruino.com/modules/](http://www.espruino.com/modules/) but an arbitrary URL or file path may also be provided.
 
 ```
 >.module foo http://espmods.com/mods/foo
